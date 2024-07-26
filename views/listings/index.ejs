@@ -1,0 +1,35 @@
+<% layout("layouts/boilerplate") %>
+
+<body>
+  <%= success %>
+  <h1 class="mt-3 mb-5">
+    <i class="fa-solid fa-globe"></i>&nbsp;&nbsp;WanderLust,&nbsp; Your&nbsp;
+    happiness&nbsp; is&nbsp; what&nbsp; we&nbsp; desire
+  </h1>
+  <!-- <form method="GET" action="/listings/new">
+    <button>Create New Listing</button>
+  </form> -->
+
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <%for(let listing of allListings){%>
+    <div class="card col listing-card">
+      <a href="/listings/<%=listing._id%>">
+        <img
+          src="<%=listing.image%>"
+          class="card-img-top"
+          alt="listing_image"
+          style="height: 20rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <h6 class="card-title"><b><%=listing.title%></b> <br /></h6>
+          <p .class="card-text">
+            &#8377;<%=listing.price.toLocaleString("en-IN")%>%>
+          </p>
+          <!-- <p class="card-text"><%=//listing.description%></p> -->
+        </div>
+      </a>
+    </div>
+    <%}%>
+  </div>
+</body>
